@@ -27,14 +27,27 @@ public class EditorInterface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        textArea1 = new java.awt.TextArea();
+        txtPainel = new java.awt.TextArea();
         checkboxNegrito = new java.awt.Checkbox();
         checkbox2 = new java.awt.Checkbox();
         checkbox3 = new java.awt.Checkbox();
         choice1 = new java.awt.Choice();
         jMenuBar1 = new javax.swing.JMenuBar();
         menubarArquivo = new javax.swing.JMenu();
+        arquivobarAbrir = new javax.swing.JMenuItem();
+        arquivobarNovo = new javax.swing.JMenuItem();
+        arquivobarSalvar = new javax.swing.JMenuItem();
         menubarEditar = new javax.swing.JMenu();
+        editarbarDesfazer = new javax.swing.JMenuItem();
+        esditarbarRefazer = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        editarbarRecortar = new javax.swing.JMenuItem();
+        editarbarCopiar = new javax.swing.JMenuItem();
+        editarbarColar = new javax.swing.JMenuItem();
+        menubarUsuario = new javax.swing.JMenu();
+        usuariobarTrocar = new javax.swing.JMenuItem();
+        usuariobarSair = new javax.swing.JMenuItem();
+        menubarSobre = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,10 +68,70 @@ public class EditorInterface extends javax.swing.JFrame {
         });
 
         menubarArquivo.setText("Arquivo");
+
+        arquivobarAbrir.setText("Abrir");
+        arquivobarAbrir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arquivobarAbrirActionPerformed(evt);
+            }
+        });
+        menubarArquivo.add(arquivobarAbrir);
+
+        arquivobarNovo.setText("Novo");
+        arquivobarNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arquivobarNovoActionPerformed(evt);
+            }
+        });
+        menubarArquivo.add(arquivobarNovo);
+
+        arquivobarSalvar.setText("Salvar");
+        arquivobarSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arquivobarSalvarActionPerformed(evt);
+            }
+        });
+        menubarArquivo.add(arquivobarSalvar);
+
         jMenuBar1.add(menubarArquivo);
 
         menubarEditar.setText("Editar");
+
+        editarbarDesfazer.setText("Desfazer");
+        menubarEditar.add(editarbarDesfazer);
+
+        esditarbarRefazer.setText("Refazer");
+        menubarEditar.add(esditarbarRefazer);
+        menubarEditar.add(jSeparator1);
+
+        editarbarRecortar.setText("Recortar");
+        editarbarRecortar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarbarRecortarActionPerformed(evt);
+            }
+        });
+        menubarEditar.add(editarbarRecortar);
+
+        editarbarCopiar.setText("Copiar");
+        menubarEditar.add(editarbarCopiar);
+
+        editarbarColar.setText("Colar");
+        menubarEditar.add(editarbarColar);
+
         jMenuBar1.add(menubarEditar);
+
+        menubarUsuario.setText("Usuário");
+
+        usuariobarTrocar.setText("Trocar de Usuário");
+        menubarUsuario.add(usuariobarTrocar);
+
+        usuariobarSair.setText("Sair");
+        menubarUsuario.add(usuariobarSair);
+
+        jMenuBar1.add(menubarUsuario);
+
+        menubarSobre.setText("Sobre");
+        jMenuBar1.add(menubarSobre);
 
         setJMenuBar(jMenuBar1);
 
@@ -66,7 +139,7 @@ public class EditorInterface extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(textArea1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(txtPainel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(checkboxNegrito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -91,7 +164,7 @@ public class EditorInterface extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtPainel, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         checkboxNegrito.getAccessibleContext().setAccessibleName("");
@@ -102,6 +175,22 @@ public class EditorInterface extends javax.swing.JFrame {
     private void choice1CaretPositionChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_choice1CaretPositionChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_choice1CaretPositionChanged
+
+    private void arquivobarNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arquivobarNovoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_arquivobarNovoActionPerformed
+
+    private void arquivobarSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arquivobarSalvarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_arquivobarSalvarActionPerformed
+
+    private void editarbarRecortarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarbarRecortarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editarbarRecortarActionPerformed
+
+    private void arquivobarAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arquivobarAbrirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_arquivobarAbrirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,13 +228,26 @@ public class EditorInterface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem arquivobarAbrir;
+    private javax.swing.JMenuItem arquivobarNovo;
+    private javax.swing.JMenuItem arquivobarSalvar;
     private java.awt.Checkbox checkbox2;
     private java.awt.Checkbox checkbox3;
     private java.awt.Checkbox checkboxNegrito;
     private java.awt.Choice choice1;
+    private javax.swing.JMenuItem editarbarColar;
+    private javax.swing.JMenuItem editarbarCopiar;
+    private javax.swing.JMenuItem editarbarDesfazer;
+    private javax.swing.JMenuItem editarbarRecortar;
+    private javax.swing.JMenuItem esditarbarRefazer;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JMenu menubarArquivo;
     private javax.swing.JMenu menubarEditar;
-    private java.awt.TextArea textArea1;
+    private javax.swing.JMenu menubarSobre;
+    private javax.swing.JMenu menubarUsuario;
+    private java.awt.TextArea txtPainel;
+    private javax.swing.JMenuItem usuariobarSair;
+    private javax.swing.JMenuItem usuariobarTrocar;
     // End of variables declaration//GEN-END:variables
 }
