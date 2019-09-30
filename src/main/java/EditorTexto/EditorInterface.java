@@ -3,19 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.brunotome.interfaces;
 
+package EditorTexto;
+import java.io.File;
+import java.io.FileWriter;   // Import the FileWriter class
+import java.io.IOException; 
+import java.io.FileNotFoundException;//
+import javax.swing.JOptionPane;
+import java.util.Scanner;
 /**
  *
- * @author leos_
+ * @author leos_ && 
+ * @author brunot
  */
 public class EditorInterface extends javax.swing.JFrame {
+    
+
 
     /**
      * Creates new form EditorInterface
      */
     public EditorInterface() {
         initComponents();
+        
     }
 
     /**
@@ -50,6 +60,12 @@ public class EditorInterface extends javax.swing.JFrame {
         menubarSobre = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        txtPainel.addTextListener(new java.awt.event.TextListener() {
+            public void textValueChanged(java.awt.event.TextEvent evt) {
+                txtPainelTextValueChanged(evt);
+            }
+        });
 
         checkboxNegrito.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         checkboxNegrito.setLabel("Negrito");
@@ -178,10 +194,28 @@ public class EditorInterface extends javax.swing.JFrame {
 
     private void arquivobarNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arquivobarNovoActionPerformed
         // TODO add your handling code here:
+       
+        txtPainel.setText("");
     }//GEN-LAST:event_arquivobarNovoActionPerformed
 
     private void arquivobarSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arquivobarSalvarActionPerformed
-        // TODO add your handling code here:
+      try{ 
+       String str = txtPainel.getText(); 
+       String fname = JOptionPane.showInputDialog("Qual o nome do arquivo que você deseja salvar?");
+       File f = new File(fname); // Specify the filename
+       if(f.exists()){
+           int input = JOptionPane.showConfirmDialog(rootPane, "Arquivo já existe. \n Deseja sobrescrever ?", "arquivo já existe", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.ERROR_MESSAGE);
+           if(input == 0){}else{throw new IOException("Usuario não sobrescreveu arquivo");};
+       }else{};
+       FileWriter myw = new FileWriter(f.getName());
+       myw.write(str);
+       myw.close();
+       System.out.println("Arquivo Salvo.");
+      }
+       catch (IOException e) {
+      System.out.println("An error occurred.");
+      System.out.print(e);
+      e.printStackTrace();}
     }//GEN-LAST:event_arquivobarSalvarActionPerformed
 
     private void editarbarRecortarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarbarRecortarActionPerformed
@@ -190,7 +224,25 @@ public class EditorInterface extends javax.swing.JFrame {
 
     private void arquivobarAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arquivobarAbrirActionPerformed
         // TODO add your handling code here:
+        String fname = JOptionPane.showInputDialog("Qual o nome do arquivo que você deseja abrir?");
+        try {
+         File f = new File(fname);
+        Scanner myR = new Scanner(f);
+        String data = "";
+      while (myR.hasNextLine()) {
+        data.concat(myR.nextLine());
+      }
+      txtPainel.setText(data);
+      myR.close();
+    } catch (FileNotFoundException e) {
+      JOptionPane.showMessageDialog(null, "Não foi possível abrir o arquivo pois não foi encontrado", "InfoBox: " + "Arquivo não Existe", JOptionPane.INFORMATION_MESSAGE);
+      e.printStackTrace();
+    } 
     }//GEN-LAST:event_arquivobarAbrirActionPerformed
+
+    private void txtPainelTextValueChanged(java.awt.event.TextEvent evt) {//GEN-FIRST:event_txtPainelTextValueChanged
+               // TODO add your handling code here:
+    }//GEN-LAST:event_txtPainelTextValueChanged
 
     /**
      * @param args the command line arguments
@@ -198,6 +250,10 @@ public class EditorInterface extends javax.swing.JFrame {
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        
+        
+        
+        
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
@@ -218,6 +274,7 @@ public class EditorInterface extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(EditorInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
