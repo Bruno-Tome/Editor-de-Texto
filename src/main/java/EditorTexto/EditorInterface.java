@@ -72,10 +72,10 @@ public class EditorInterface extends javax.swing.JFrame {
 
         choice1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         choice1.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+            }
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
                 choice1CaretPositionChanged(evt);
-            }
-            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
 
@@ -215,8 +215,9 @@ public class EditorInterface extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(choice1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButton5)
+                                .addComponent(jButton6)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPainel, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -241,8 +242,8 @@ public class EditorInterface extends javax.swing.JFrame {
        File f = new File(fname); // Specify the filename
        if(f.exists()){
            int input = JOptionPane.showConfirmDialog(rootPane, "Arquivo já existe. \n Deseja sobrescrever ?", "arquivo já existe", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.ERROR_MESSAGE);
-           if(input == 0){}else{throw new IOException("Usuario não sobrescreveu arquivo");}
-       }else{}
+           if(input == 0){}else{throw new IOException("Usuario não sobrescreveu arquivo");};
+       }else{};
        FileWriter myw = new FileWriter(f.getName());
        myw.write(str);
        myw.close();
@@ -268,7 +269,7 @@ public class EditorInterface extends javax.swing.JFrame {
         String data = "";
       while (myR.hasNextLine()) {
         data.concat(myR.nextLine());
-        
+        txtPainel.
       }
       txtPainel.setText(data);
       myR.close();
