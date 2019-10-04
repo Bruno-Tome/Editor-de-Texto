@@ -38,10 +38,13 @@ public class EditorInterface extends javax.swing.JFrame {
     private void initComponents() {
 
         txtPainel = new java.awt.TextArea();
-        checkboxNegrito = new java.awt.Checkbox();
-        checkbox2 = new java.awt.Checkbox();
-        checkbox3 = new java.awt.Checkbox();
         choice1 = new java.awt.Choice();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menubarArquivo = new javax.swing.JMenu();
         arquivobarAbrir = new javax.swing.JMenuItem();
@@ -67,24 +70,36 @@ public class EditorInterface extends javax.swing.JFrame {
             }
         });
 
-        checkboxNegrito.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        checkboxNegrito.setLabel("Negrito");
-
-        checkbox2.setLabel("Itálico");
-
-        checkbox3.setLabel("Sublinhado");
-
         choice1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         choice1.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+            }
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
                 choice1CaretPositionChanged(evt);
             }
-            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+        });
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/text_bold.png"))); // NOI18N
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/text_italic.png"))); // NOI18N
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/text_underline.png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
         });
 
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/file.png"))); // NOI18N
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/arrow_undo.png"))); // NOI18N
+
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/arrow_redo.png"))); // NOI18N
+
+        menubarArquivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/folder.png"))); // NOI18N
         menubarArquivo.setText("Arquivo");
 
+        arquivobarAbrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/folder.png"))); // NOI18N
         arquivobarAbrir.setText("Abrir");
         arquivobarAbrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +108,7 @@ public class EditorInterface extends javax.swing.JFrame {
         });
         menubarArquivo.add(arquivobarAbrir);
 
+        arquivobarNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/folder_add.png"))); // NOI18N
         arquivobarNovo.setText("Novo");
         arquivobarNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +117,7 @@ public class EditorInterface extends javax.swing.JFrame {
         });
         menubarArquivo.add(arquivobarNovo);
 
+        arquivobarSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/file.png"))); // NOI18N
         arquivobarSalvar.setText("Salvar");
         arquivobarSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,15 +128,19 @@ public class EditorInterface extends javax.swing.JFrame {
 
         jMenuBar1.add(menubarArquivo);
 
+        menubarEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/page_edit.png"))); // NOI18N
         menubarEditar.setText("Editar");
 
+        editarbarDesfazer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/arrow_undo.png"))); // NOI18N
         editarbarDesfazer.setText("Desfazer");
         menubarEditar.add(editarbarDesfazer);
 
+        esditarbarRefazer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/arrow_redo.png"))); // NOI18N
         esditarbarRefazer.setText("Refazer");
         menubarEditar.add(esditarbarRefazer);
         menubarEditar.add(jSeparator1);
 
+        editarbarRecortar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/cut.png"))); // NOI18N
         editarbarRecortar.setText("Recortar");
         editarbarRecortar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,24 +149,30 @@ public class EditorInterface extends javax.swing.JFrame {
         });
         menubarEditar.add(editarbarRecortar);
 
+        editarbarCopiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/page_white_copy.png"))); // NOI18N
         editarbarCopiar.setText("Copiar");
         menubarEditar.add(editarbarCopiar);
 
+        editarbarColar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/page_paste.png"))); // NOI18N
         editarbarColar.setText("Colar");
         menubarEditar.add(editarbarColar);
 
         jMenuBar1.add(menubarEditar);
 
+        menubarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/user.png"))); // NOI18N
         menubarUsuario.setText("Usuário");
 
+        usuariobarTrocar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/user_edit.png"))); // NOI18N
         usuariobarTrocar.setText("Trocar de Usuário");
         menubarUsuario.add(usuariobarTrocar);
 
+        usuariobarSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/status-offline.png"))); // NOI18N
         usuariobarSair.setText("Sair");
         menubarUsuario.add(usuariobarSair);
 
         jMenuBar1.add(menubarUsuario);
 
+        menubarSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/information.png"))); // NOI18N
         menubarSobre.setText("Sobre");
         jMenuBar1.add(menubarSobre);
 
@@ -157,14 +184,21 @@ public class EditorInterface extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(txtPainel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(checkboxNegrito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addGap(1, 1, 1)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(checkbox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton3)
+                .addGap(23, 23, 23)
+                .addComponent(jButton4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(checkbox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
                 .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 593, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(jButton6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton5)
+                .addGap(0, 480, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,18 +206,21 @@ public class EditorInterface extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(checkboxNegrito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(checkbox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(checkbox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 14, Short.MAX_VALUE))
+                            .addComponent(jButton1)
+                            .addComponent(jButton2)
+                            .addComponent(jButton3))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(23, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(choice1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButton5)
+                                .addComponent(jButton6)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPainel, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        checkboxNegrito.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -246,6 +283,10 @@ public class EditorInterface extends javax.swing.JFrame {
                // TODO add your handling code here:
     }//GEN-LAST:event_txtPainelTextValueChanged
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -290,15 +331,18 @@ public class EditorInterface extends javax.swing.JFrame {
     private javax.swing.JMenuItem arquivobarAbrir;
     private javax.swing.JMenuItem arquivobarNovo;
     private javax.swing.JMenuItem arquivobarSalvar;
-    private java.awt.Checkbox checkbox2;
-    private java.awt.Checkbox checkbox3;
-    private java.awt.Checkbox checkboxNegrito;
     private java.awt.Choice choice1;
     private javax.swing.JMenuItem editarbarColar;
     private javax.swing.JMenuItem editarbarCopiar;
     private javax.swing.JMenuItem editarbarDesfazer;
     private javax.swing.JMenuItem editarbarRecortar;
     private javax.swing.JMenuItem esditarbarRefazer;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JMenu menubarArquivo;
