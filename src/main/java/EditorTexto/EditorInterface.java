@@ -227,10 +227,12 @@ public class EditorInterface extends javax.swing.JFrame {
         String fname = JOptionPane.showInputDialog("Qual o nome do arquivo que você deseja abrir?");
         try {
          File f = new File(fname);
+        
         Scanner myR = new Scanner(f);
         String data = "";
       while (myR.hasNextLine()) {
         data.concat(myR.nextLine());
+        txtPainel.
       }
       txtPainel.setText(data);
       myR.close();
