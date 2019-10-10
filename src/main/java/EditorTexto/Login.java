@@ -58,6 +58,11 @@ public class Login extends javax.swing.JDialog {
         jLabel4.setText("Para criar um novo usuario, clique no botao abaixo:");
 
         bttCadastra.setText("Cadastrar");
+        bttCadastra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bttCadastraActionPerformed(evt);
+            }
+        });
 
         bttCloseLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/status-offline.png"))); // NOI18N
 
@@ -120,6 +125,12 @@ public class Login extends javax.swing.JDialog {
     private void bttOkLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttOkLoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bttOkLoginActionPerformed
+
+    private void bttCadastraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttCadastraActionPerformed
+        // TODO add your handling code here:
+        TelaCadastro tela = new TelaCadastro(tela, true);
+        
+    }//GEN-LAST:event_bttCadastraActionPerformed
 
     /**
      * @param args the command line arguments

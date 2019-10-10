@@ -41,6 +41,9 @@ public class Usuario {
         this.senha = senha;
     }
     
+    public boolean autentica(String user, String senha){
+        
+    }
     
     
 }
