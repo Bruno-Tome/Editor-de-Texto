@@ -41,8 +41,32 @@ public class Usuario {
         this.senha = senha;
     }
     
-    public boolean autentica(String user, String senha){
+    public void autentica(String user, String senha){
         
+    }
+    
+    public boolean equals(Object obj) { 
+        if (obj == null) return false;
+        if (!(obj instanceof Usuario)) 
+            return false; 
+        boolean result = false; 
+        try { 
+            for (Field field : getClass().getFields()) { 
+            Object thisFieldValue = field.get(this);
+             if (thisFieldValue == null) 
+                result = field.get(obj) == null;
+            else { 
+            field.setAccessible(true);
+            } 
+            result = thisFieldValue.equals(field.get(obj));
+            if (!result) 
+            break;
+    } 
+    } catch (IllegalArgumentException ex) { 
+
+    } catch (IllegalAccessException ex) { 
+    field.setAccessible(true); 
+    return result; 
     }
     
     

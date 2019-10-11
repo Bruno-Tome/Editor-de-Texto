@@ -13,7 +13,8 @@ public class main {
 
     public static void main(String [] args){
         
-            
+            TelaInicio ini = new TelaInicio();
+            ini.setVisible(true);
     
     
     }
