@@ -49,9 +49,10 @@ public class Usuario {
         if (obj == null) return false;
         if (!(obj instanceof Usuario)) 
             return false; 
-        boolean result = false; 
+        boolean result = false;
+        for (Field field : obj.getClass().getFields()) {
         try { 
-            for (Field field : getClass().getFields()) { 
+             
             Object thisFieldValue = field.get(this);
              if (thisFieldValue == null) 
                 result = field.get(obj) == null;
@@ -61,12 +62,11 @@ public class Usuario {
             result = thisFieldValue.equals(field.get(obj));
             if (!result) 
             break;
-    } 
-    } catch (IllegalArgumentException ex) { 
-
-    } catch (IllegalAccessException ex) { 
+     
+        } catch (IllegalAccessException ex) { 
     field.setAccessible(true); 
     return result; 
+    }
     }
     
     

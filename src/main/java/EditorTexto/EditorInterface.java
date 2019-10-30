@@ -268,13 +268,14 @@ public class EditorInterface extends javax.swing.JFrame {
         String data = "";
       while (myR.hasNextLine()) {
         data.concat(myR.nextLine());
-        txtPainel.
+        
       }
       txtPainel.setText(data);
       myR.close();
     } catch (FileNotFoundException e) {
       JOptionPane.showMessageDialog(null, "Não foi possível abrir o arquivo pois não foi encontrado", "InfoBox: " + "Arquivo não Existe", JOptionPane.INFORMATION_MESSAGE);
       e.printStackTrace();
+      
     } 
     }//GEN-LAST:event_arquivobarAbrirActionPerformed
 
