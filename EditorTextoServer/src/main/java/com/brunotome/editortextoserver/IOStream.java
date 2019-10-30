@@ -23,8 +23,7 @@ public class IOStream {
     
     }catch(IOException e){
         
-      
-        
+    }
     }
     
     
