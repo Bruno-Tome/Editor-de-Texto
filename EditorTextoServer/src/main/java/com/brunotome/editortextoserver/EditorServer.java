@@ -16,8 +16,9 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
+import java.util.concurrent.Executors;
 import javax.swing.JOptionPane;
-import javax.swing.JRootPane;
+
 
 /**
  *
@@ -33,10 +34,10 @@ public class EditorServer extends Thread{
     public void init(){
         try{
     this.connectionSocket = connectToServer();
-    this.iostrm = new IOStream(connectionSocket); 
+     
     this.inputToServer = connectionSocket.getInputStream();
     this.outputFromServer = connectionSocket.getOutputStream();
-
+        IOStream();
     }catch(IOException e){
         e.printStackTrace();
     
@@ -49,7 +50,7 @@ public class EditorServer extends Thread{
     OutputStream outputFromServer;
     InputStream inputToServer = null;
     private Socket connectionSocket;
-    private IOStream iostrm;   
+
     
     
     public static Socket connectToServer(){
@@ -61,8 +62,8 @@ public class EditorServer extends Thread{
           System.out.println(e);
           return (Socket)null;
       }}
-         @Override
-       public void run() {
+    
+       public void IOStream() {
            
         try{ 
             
@@ -73,21 +74,34 @@ public class EditorServer extends Thread{
 
             //Have the server take input from the client and echo it back
             //This should be placed in a loop that listens for a terminator text e.g. bye
-           
+            boolean isEditable = true;
             boolean done = false;
                 String line;
-            while(!done && scanner.hasNextLine()) {
+                
+                Runnable runnable = () -> {
+                          boolean bool = salvar();
+                          if(bool){serverPrintOut.println("Arquivo Salvo");
+                         }else{
+                        serverPrintOut.println("Um erro ocorreu, tente novamente");
+                    }
+                     };
+            while(!done && scanner.hasNextLine() ) {
                  line = scanner.nextLine();
                 
-                if(line.equalsIgnoreCase("save")){boolean bool = salvar(); if(bool){serverPrintOut.println("Arquivo Salvo");}else{serverPrintOut.println("Um erro ocorreu, tente novamente");}}
-                if(line.equalsIgnoreCase("sair")){serverPrintOut.println("Até mais!");done = true;}
+                if(line.equalsIgnoreCase("save")){
+                    if(isEditable == true){ 
+                    Executors.newCachedThreadPool().execute(runnable);
+                }
+                }
+                if(line.equalsIgnoreCase("sair")){serverPrintOut.println("Até mais!");done = true; isEditable=false;}
                 
                 serverPrintOut.println("Echo from bruno's Server: " + line);
                 this.inter.atualizaTxtf(line);
-                if(line.toLowerCase().trim().equals("peace")) {
-                    done = true;
-                }
+                 
+                
+               
             }
+            
             
         }catch(IOException e){}
        }
