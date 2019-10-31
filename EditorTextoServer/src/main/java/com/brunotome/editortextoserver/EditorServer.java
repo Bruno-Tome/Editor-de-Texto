@@ -5,6 +5,7 @@
  */
 package com.brunotome.editortextoserver;
 
+import java.awt.Component;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,15 +17,16 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+import javax.swing.JRootPane;
 
 /**
  *
  * @author brunorosa
  */
-public class EditorServer {
+public class EditorServer extends Thread{
     
     
-    EditorServer(InterfaceServerProto moth){
+    EditorServer(InterfaceServer moth){
         this.inter = moth;
     
     }
@@ -34,8 +36,7 @@ public class EditorServer {
     this.iostrm = new IOStream(connectionSocket); 
     this.inputToServer = connectionSocket.getInputStream();
     this.outputFromServer = connectionSocket.getOutputStream();
-    Salvar();
-    
+
     }catch(IOException e){
         e.printStackTrace();
     
@@ -44,7 +45,7 @@ public class EditorServer {
     
     
     }
-    private InterfaceServerProto inter;
+    private InterfaceServer inter;
     OutputStream outputFromServer;
     InputStream inputToServer = null;
     private Socket connectionSocket;
@@ -60,37 +61,46 @@ public class EditorServer {
           System.out.println(e);
           return (Socket)null;
       }}
-       public void Salvar(){
+         @Override
+       public void run() {
            
         try{ 
             
             Scanner scanner = new Scanner(inputToServer, "UTF-8");
             PrintWriter serverPrintOut = new PrintWriter(new OutputStreamWriter(outputFromServer, "UTF-8"), true);
 
-            serverPrintOut.println("Hello World! Enter Peace to exit.");
+            serverPrintOut.println("Ola! Escreva \"save\" para salvar e \"sair\" para sair;");
 
             //Have the server take input from the client and echo it back
             //This should be placed in a loop that listens for a terminator text e.g. bye
+           
             boolean done = false;
-
+                String line;
             while(!done && scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                this.inter.atualizaTxtf(line);
+                 line = scanner.nextLine();
+                
+                if(line.equalsIgnoreCase("save")){boolean bool = salvar(); if(bool){serverPrintOut.println("Arquivo Salvo");}else{serverPrintOut.println("Um erro ocorreu, tente novamente");}}
+                if(line.equalsIgnoreCase("sair")){serverPrintOut.println("Até mais!");done = true;}
+                
                 serverPrintOut.println("Echo from bruno's Server: " + line);
-
+                this.inter.atualizaTxtf(line);
                 if(line.toLowerCase().trim().equals("peace")) {
                     done = true;
                 }
             }
             
+        }catch(IOException e){}
+       }
             
             
-            
-            /*
-      //String str = txtPainel.getText(); //string que contem o arquivo
+         public boolean salvar(){
+         try{
+         
+         String str = this.inter.txtf.getText(); //string que contem o arquivo
        String fname = JOptionPane.showInputDialog("Qual o nome do arquivo que você deseja salvar?");
        File f = new File(fname); // Specify the filename
        if(f.exists()){
+             Component rootPane = this.inter.getRootPane();
            int input = JOptionPane.showConfirmDialog(rootPane, "Arquivo já existe. \n Deseja sobrescrever ?", "arquivo já existe", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.ERROR_MESSAGE);
            if(input == 0){}else{throw new IOException("Usuario não sobrescreveu arquivo");};
        }else{};
@@ -98,16 +108,24 @@ public class EditorServer {
        myw.write(str);
        myw.close();
        System.out.println("Arquivo Salvo.");
-            */
-      }
-       catch (IOException e) {
+         return true;   
+      }catch (IOException e) {
       System.out.println("An error occurred.");
       System.out.print(e);
-      e.printStackTrace();}
+      e.printStackTrace();
+      return false;
+      
+      }
+         
+         
+         }
+            
+            
        
        
        
-       }
+       
+       
     
     
 }
