@@ -13,8 +13,9 @@ public class main {
 
     public static void main(String [] args){
         
-            TelaInicio ini = new TelaInicio();
+            Login ini = new Login();
             ini.setVisible(true);
+            
     
     
     }

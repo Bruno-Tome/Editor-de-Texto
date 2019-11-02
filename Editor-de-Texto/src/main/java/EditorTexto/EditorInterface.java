@@ -13,8 +13,8 @@ import javax.swing.JOptionPane;
 import java.util.Scanner;
 /**
  *
- * @author leos_ && 
- * @author brunot
+ * @author Leonardo Godoy &&
+ * @author Bruno Tomé Rosa
  */
 public class EditorInterface extends javax.swing.JFrame {
     
@@ -39,13 +39,13 @@ public class EditorInterface extends javax.swing.JFrame {
 
         txtPainel = new java.awt.TextArea();
         choice1 = new java.awt.Choice();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        bttNegrito = new javax.swing.JButton();
+        bttItalico = new javax.swing.JButton();
+        bttSublinhado = new javax.swing.JButton();
+        bttSalvar = new javax.swing.JButton();
+        bttDesfazer = new javax.swing.JButton();
+        bttRefazer = new javax.swing.JButton();
+        menuBar = new javax.swing.JMenuBar();
         menubarArquivo = new javax.swing.JMenu();
         arquivobarAbrir = new javax.swing.JMenuItem();
         arquivobarNovo = new javax.swing.JMenuItem();
@@ -72,29 +72,29 @@ public class EditorInterface extends javax.swing.JFrame {
 
         choice1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         choice1.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
-            }
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
                 choice1CaretPositionChanged(evt);
             }
-        });
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/text_bold.png"))); // NOI18N
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/text_italic.png"))); // NOI18N
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/text_underline.png"))); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/file.png"))); // NOI18N
+        bttNegrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/text_bold.png"))); // NOI18N
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/arrow_undo.png"))); // NOI18N
+        bttItalico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/text_italic.png"))); // NOI18N
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/arrow_redo.png"))); // NOI18N
+        bttSublinhado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/text_underline.png"))); // NOI18N
+        bttSublinhado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bttSublinhadoActionPerformed(evt);
+            }
+        });
+
+        bttSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/file.png"))); // NOI18N
+
+        bttDesfazer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/arrow_undo.png"))); // NOI18N
+
+        bttRefazer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/arrow_redo.png"))); // NOI18N
 
         menubarArquivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/folder.png"))); // NOI18N
         menubarArquivo.setText("Arquivo");
@@ -126,17 +126,27 @@ public class EditorInterface extends javax.swing.JFrame {
         });
         menubarArquivo.add(arquivobarSalvar);
 
-        jMenuBar1.add(menubarArquivo);
+        menuBar.add(menubarArquivo);
 
         menubarEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/page_edit.png"))); // NOI18N
         menubarEditar.setText("Editar");
 
         editarbarDesfazer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/arrow_undo.png"))); // NOI18N
         editarbarDesfazer.setText("Desfazer");
+        editarbarDesfazer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarbarDesfazerActionPerformed(evt);
+            }
+        });
         menubarEditar.add(editarbarDesfazer);
 
         esditarbarRefazer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/arrow_redo.png"))); // NOI18N
         esditarbarRefazer.setText("Refazer");
+        esditarbarRefazer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                esditarbarRefazerActionPerformed(evt);
+            }
+        });
         menubarEditar.add(esditarbarRefazer);
         menubarEditar.add(jSeparator1);
 
@@ -157,7 +167,7 @@ public class EditorInterface extends javax.swing.JFrame {
         editarbarColar.setText("Colar");
         menubarEditar.add(editarbarColar);
 
-        jMenuBar1.add(menubarEditar);
+        menuBar.add(menubarEditar);
 
         menubarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/user.png"))); // NOI18N
         menubarUsuario.setText("Usuário");
@@ -170,13 +180,13 @@ public class EditorInterface extends javax.swing.JFrame {
         usuariobarSair.setText("Sair");
         menubarUsuario.add(usuariobarSair);
 
-        jMenuBar1.add(menubarUsuario);
+        menuBar.add(menubarUsuario);
 
         menubarSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/information.png"))); // NOI18N
         menubarSobre.setText("Sobre");
-        jMenuBar1.add(menubarSobre);
+        menuBar.add(menubarSobre);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -185,19 +195,19 @@ public class EditorInterface extends javax.swing.JFrame {
             .addComponent(txtPainel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(bttNegrito)
                 .addGap(1, 1, 1)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bttItalico, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(bttSublinhado)
                 .addGap(23, 23, 23)
-                .addComponent(jButton4)
+                .addComponent(bttSalvar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(jButton6)
+                .addComponent(bttRefazer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
+                .addComponent(bttDesfazer)
                 .addGap(0, 480, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -206,17 +216,17 @@ public class EditorInterface extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))
+                            .addComponent(bttNegrito)
+                            .addComponent(bttItalico)
+                            .addComponent(bttSublinhado))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(23, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(choice1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(bttSalvar, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bttDesfazer, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bttRefazer, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPainel, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -228,9 +238,19 @@ public class EditorInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_choice1CaretPositionChanged
 
+    /** 
+     * Nessa classe, temos a interface do programa com parte do seu funcionamento. 
+     * Pricipalmente dos botões do menu.
+     * 
+     *  
+     */
+    
+    
     private void arquivobarNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arquivobarNovoActionPerformed
         // TODO add your handling code here:
-       
+       /**
+        * Cria um novo arquivo, entrando pela menubar, na paleta de arquivo.
+        */
         txtPainel.setText("");
     }//GEN-LAST:event_arquivobarNovoActionPerformed
 
@@ -252,10 +272,19 @@ public class EditorInterface extends javax.swing.JFrame {
       System.out.println("An error occurred.");
       System.out.print(e);
       e.printStackTrace();}
+      /**
+       * Método para salvar o arquivo criado, botão acessado pela paleta de arquivo da menubar.
+       * 
+       */
+      
     }//GEN-LAST:event_arquivobarSalvarActionPerformed
 
     private void editarbarRecortarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarbarRecortarActionPerformed
         // TODO add your handling code here:
+        /**
+         * Não implementado ainda
+         */
+        
     }//GEN-LAST:event_editarbarRecortarActionPerformed
 
     private void arquivobarAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arquivobarAbrirActionPerformed
@@ -276,16 +305,28 @@ public class EditorInterface extends javax.swing.JFrame {
       JOptionPane.showMessageDialog(null, "Não foi possível abrir o arquivo pois não foi encontrado", "InfoBox: " + "Arquivo não Existe", JOptionPane.INFORMATION_MESSAGE);
       e.printStackTrace();
       
-    } 
+    }
+        /**
+         * Método para abrir um arquivo, acessado na menubar, na paleta de arquivo.
+         */
+        
     }//GEN-LAST:event_arquivobarAbrirActionPerformed
 
     private void txtPainelTextValueChanged(java.awt.event.TextEvent evt) {//GEN-FIRST:event_txtPainelTextValueChanged
                // TODO add your handling code here:
     }//GEN-LAST:event_txtPainelTextValueChanged
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void bttSublinhadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttSublinhadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_bttSublinhadoActionPerformed
+
+    private void editarbarDesfazerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarbarDesfazerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editarbarDesfazerActionPerformed
+
+    private void esditarbarRefazerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_esditarbarRefazerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_esditarbarRefazerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -331,20 +372,20 @@ public class EditorInterface extends javax.swing.JFrame {
     private javax.swing.JMenuItem arquivobarAbrir;
     private javax.swing.JMenuItem arquivobarNovo;
     private javax.swing.JMenuItem arquivobarSalvar;
+    private javax.swing.JButton bttDesfazer;
+    private javax.swing.JButton bttItalico;
+    private javax.swing.JButton bttNegrito;
+    private javax.swing.JButton bttRefazer;
+    private javax.swing.JButton bttSalvar;
+    private javax.swing.JButton bttSublinhado;
     private java.awt.Choice choice1;
     private javax.swing.JMenuItem editarbarColar;
     private javax.swing.JMenuItem editarbarCopiar;
     private javax.swing.JMenuItem editarbarDesfazer;
     private javax.swing.JMenuItem editarbarRecortar;
     private javax.swing.JMenuItem esditarbarRefazer;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu menubarArquivo;
     private javax.swing.JMenu menubarEditar;
     private javax.swing.JMenu menubarSobre;

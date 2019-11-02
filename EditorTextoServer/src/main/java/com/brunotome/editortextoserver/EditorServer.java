@@ -42,6 +42,9 @@ public class EditorServer extends Thread{
         e.printStackTrace();
     
     }
+        /**
+         * Inicialização do server, criação do socket para lançar a conexão, em seguida entrada e saída do servidor conectados.
+         */
     
     
     
