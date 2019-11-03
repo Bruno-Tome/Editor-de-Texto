@@ -8,6 +8,8 @@ import java.util.*;
 /**
  *
  * @author brunorosa
+ * 
+ * @version 1.0000001
  */
 public class main {
 
@@ -15,6 +17,11 @@ public class main {
         
             Login ini = new Login();
             ini.setVisible(true);
+            
+            /**
+             * Inicia a tela de login, cujo a qual faz o link para as outras telas e funcionalidades.
+             * 
+             */
             
     
     

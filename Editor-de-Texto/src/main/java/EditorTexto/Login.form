@@ -165,11 +165,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Entrar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bttEntrarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bttFechar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Fechar/Cancelar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bttFecharActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bttModoTeste">
           <Properties>

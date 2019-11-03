@@ -12,6 +12,10 @@ package EditorTexto;
 public class Usuario {
     private String user;
     private String senha;
+    
+    //public String loginAdm = "adm";
+    //public String senhaAdm = "123";
+    
 
     /**
      * @return the user
@@ -45,7 +49,8 @@ public class Usuario {
         
     }
     
-    public boolean equals(Object obj) { 
+    @Override
+    public boolean equals(Object obj) throws IllegalAccessException{ 
         if (obj == null) return false;
         if (!(obj instanceof Usuario)) 
             return false; 

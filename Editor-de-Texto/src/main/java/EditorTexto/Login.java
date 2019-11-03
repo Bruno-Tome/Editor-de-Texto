@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package EditorTexto;
+import EditorTextoServer.src.main.java.com.brunotome.editortextoserver;
+
 
 
 
@@ -19,6 +21,10 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
     }
+    
+    
+    String loginAdm = "adm";
+    String senhaAdm = "123";
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -69,8 +75,18 @@ public class Login extends javax.swing.JFrame {
         });
 
         bttEntrar.setText("Entrar");
+        bttEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bttEntrarActionPerformed(evt);
+            }
+        });
 
         bttFechar.setText("Fechar/Cancelar");
+        bttFechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bttFecharActionPerformed(evt);
+            }
+        });
 
         bttModoTeste.setText("Modo Teste");
         bttModoTeste.addActionListener(new java.awt.event.ActionListener() {
@@ -163,7 +179,9 @@ public class Login extends javax.swing.JFrame {
     private void txtfSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfSenhaActionPerformed
-
+    
+    
+    
     private void bttModoTesteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttModoTesteActionPerformed
         // TODO add your handling code here:
         InterfaceServer inter =  new InterfaceServer();
@@ -173,7 +191,39 @@ public class Login extends javax.swing.JFrame {
         
         EditorServer server = new EditorServer(inter);
         server.init();
+        /**
+         * Botão para teste sem necessidade de login
+         */
+        
     }//GEN-LAST:event_bttModoTesteActionPerformed
+
+    private void bttEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttEntrarActionPerformed
+        // TODO add your handling code here:
+        if(txtfLogin.getText() == loginAdm && txtfSenha.getText() == senhaAdm){
+            InterfaceServer inter =  new InterfaceServer();
+           inter.setVisible(true);
+                
+
+        
+        EditorServer server = new EditorServer(inter);
+        server.init();
+            
+        }
+        
+        /**
+         * Autenticação do cliente e inicialização do editor de texto, ainda não implementado para vários usuários diferentes.
+         */
+        
+    }//GEN-LAST:event_bttEntrarActionPerformed
+
+    private void bttFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttFecharActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+        /**
+         * Encerra o programa.
+         */
+        
+    }//GEN-LAST:event_bttFecharActionPerformed
 
     /**
      * @param args the command line arguments
