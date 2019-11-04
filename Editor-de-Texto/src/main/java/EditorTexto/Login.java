@@ -196,7 +196,7 @@ public class Login extends javax.swing.JFrame {
 
     private void bttEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttEntrarActionPerformed
         // TODO add your handling code here:
-        if(txtfLogin.getText() == loginAdm && txtfSenha.getText() == senhaAdm){
+        if(txtfLogin.getText().equals(loginAdm)&& txtfSenha.getText().equals(senhaAdm)){
           
              EditorInterface editor = new EditorInterface();
         editor.setVisible(true);

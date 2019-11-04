@@ -15,14 +15,15 @@ public class main {
     Login ini ;
     InterfaceServer inter ;
     EditorServer server ;
-    public void main(String [] args){
+    public static void main(String [] args){
         
-            this.ini = new Login();
+            Login ini = new Login();
             ini.setVisible(true);
-            this.inter =  new InterfaceServer();
+            InterfaceServer inter =  new InterfaceServer();
             inter.setVisible(true);
-            this.server = new EditorServer(inter);
+            EditorServer server = new EditorServer(inter);
             server.init();
+            
         
             /**
              * Inicia a tela de login, cujo a qual faz o link para as outras telas e funcionalidades.

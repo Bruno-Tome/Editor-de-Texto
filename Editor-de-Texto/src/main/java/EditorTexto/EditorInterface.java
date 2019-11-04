@@ -25,6 +25,7 @@ public class EditorInterface extends javax.swing.JFrame {
      */
     public EditorInterface() {
         initComponents();
+        this.setVisible(true);
         
     }
    
