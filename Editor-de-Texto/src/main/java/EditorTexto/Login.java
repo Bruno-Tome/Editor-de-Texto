@@ -183,14 +183,11 @@ public class Login extends javax.swing.JFrame {
     
     private void bttModoTesteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttModoTesteActionPerformed
         // TODO add your handling code here:
-        InterfaceServer inter =  new InterfaceServer();
-        inter.setVisible(true);
+        
         EditorInterface editor = new EditorInterface();
         editor.setVisible(true);
 
         
-        EditorServer server = new EditorServer(inter);
-        server.init();
         /**
          * Botão para teste sem necessidade de login
          */
@@ -200,11 +197,10 @@ public class Login extends javax.swing.JFrame {
     private void bttEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttEntrarActionPerformed
         // TODO add your handling code here:
         if(txtfLogin.getText() == loginAdm && txtfSenha.getText() == senhaAdm){
-          InterfaceServer inter =  new InterfaceServer();
-         inter.setVisible(true);
-       EditorServer server = new EditorServer(inter);
-        server.init();
-            
+          
+             EditorInterface editor = new EditorInterface();
+        editor.setVisible(true);
+
         }
         
         /**

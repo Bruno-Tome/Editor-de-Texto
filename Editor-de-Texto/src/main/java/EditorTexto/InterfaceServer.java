@@ -12,6 +12,7 @@ public class InterfaceServer extends javax.swing.JFrame {
      */
     public InterfaceServer() {
         initComponents();
+        this.txtf.setText("IP:Localhost, Porta: 9991");
     }
     public boolean atualizaTxtf(String str) {
         

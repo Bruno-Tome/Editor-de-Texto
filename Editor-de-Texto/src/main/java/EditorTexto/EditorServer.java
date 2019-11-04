@@ -96,7 +96,7 @@ public class EditorServer extends Thread{
                     
                 }
                 }
-                if(line.equalsIgnoreCase("sair")){serverPrintOut.println("Até mais!");done = true; isEditable=false;}
+                if(line.equalsIgnoreCase("sair")){serverPrintOut.println("Até mais!");done = true; isEditable=false;System.exit(0);}
                 
                 serverPrintOut.println("Echo from bruno's Server: " + line);
                 this.inter.atualizaTxtf(line);
