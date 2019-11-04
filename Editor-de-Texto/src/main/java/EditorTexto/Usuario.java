@@ -5,6 +5,8 @@
  */
 package EditorTexto;
 
+import java.lang.reflect.Field;
+
 /**
  *
  * @author leos_
@@ -50,7 +52,8 @@ public class Usuario {
     }
     
     @Override
-    public boolean equals(Object obj) throws IllegalAccessException{ 
+    public boolean equals(Object obj){ 
+        
         if (obj == null) return false;
         if (!(obj instanceof Usuario)) 
             return false; 
@@ -73,6 +76,7 @@ public class Usuario {
         return result; 
     }
     }
+        return false;
     
     
 }
