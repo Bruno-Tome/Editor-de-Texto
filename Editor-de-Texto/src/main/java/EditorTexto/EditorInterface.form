@@ -6,17 +6,11 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="menubarArquivo">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icones/folder.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Arquivo"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="arquivobarAbrir">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icones/folder.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Abrir"/>
               </Properties>
               <Events>
@@ -25,9 +19,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="arquivobarNovo">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icones/folder_add.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Novo"/>
               </Properties>
               <Events>
@@ -36,9 +27,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="arquivobarSalvar">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icones/file.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Salvar"/>
               </Properties>
               <Events>
@@ -49,17 +37,11 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="menubarEditar">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icones/page_edit.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Editar"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="editarbarDesfazer">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icones/arrow_undo.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Desfazer"/>
               </Properties>
               <Events>
@@ -68,9 +50,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="esditarbarRefazer">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icones/arrow_redo.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Refazer"/>
               </Properties>
               <Events>
@@ -81,9 +60,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="editarbarRecortar">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icones/cut.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Recortar"/>
               </Properties>
               <Events>
@@ -92,17 +68,11 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="editarbarCopiar">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icones/page_white_copy.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Copiar"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="editarbarColar">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icones/page_paste.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Colar"/>
               </Properties>
             </MenuItem>
@@ -110,25 +80,16 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="menubarUsuario">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icones/user.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Usu&#xe1;rio"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="usuariobarTrocar">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icones/user_edit.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Trocar de Usu&#xe1;rio"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="usuariobarSair">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icones/status-offline.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Sair"/>
               </Properties>
             </MenuItem>
@@ -136,9 +97,6 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="menubarSobre">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icones/information.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Sobre"/>
           </Properties>
         </Menu>
@@ -173,10 +131,10 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="bttNegrito" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-              <Component id="bttItalico" min="-2" pref="49" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="bttItalico" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="bttSublinhado" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               <Component id="bttSalvar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="choice1" min="-2" max="-2" attributes="0"/>
@@ -184,7 +142,7 @@
               <Component id="bttRefazer" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="bttDesfazer" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="480" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="278" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -225,7 +183,7 @@
     <Component class="java.awt.Choice" name="choice1">
       <Properties>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Default Cursor"/>
+          <Color id="Cursor Padr&#xe3;o"/>
         </Property>
       </Properties>
       <Events>
@@ -234,23 +192,17 @@
     </Component>
     <Component class="javax.swing.JButton" name="bttNegrito">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/icones/text_bold.png"/>
-        </Property>
+        <Property name="text" type="java.lang.String" value="Negrito"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="bttItalico">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/icones/text_italic.png"/>
-        </Property>
+        <Property name="text" type="java.lang.String" value="Italico"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="bttSublinhado">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/icones/text_underline.png"/>
-        </Property>
+        <Property name="text" type="java.lang.String" value="Sublinhado"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bttSublinhadoActionPerformed"/>
@@ -258,23 +210,17 @@
     </Component>
     <Component class="javax.swing.JButton" name="bttSalvar">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/icones/file.png"/>
-        </Property>
+        <Property name="text" type="java.lang.String" value="Salvar"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="bttDesfazer">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/icones/arrow_undo.png"/>
-        </Property>
+        <Property name="text" type="java.lang.String" value="Desfazer"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="bttRefazer">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/icones/arrow_redo.png"/>
-        </Property>
+        <Property name="text" type="java.lang.String" value="Refazer"/>
       </Properties>
     </Component>
   </SubComponents>
