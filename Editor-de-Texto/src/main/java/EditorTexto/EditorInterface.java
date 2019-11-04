@@ -73,34 +73,32 @@ public class EditorInterface extends javax.swing.JFrame {
 
         choice1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         choice1.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+            }
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
                 choice1CaretPositionChanged(evt);
             }
-            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
-            }
         });
 
-        bttNegrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/text_bold.png"))); // NOI18N
+        bttNegrito.setText("Negrito");
 
-        bttItalico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/text_italic.png"))); // NOI18N
+        bttItalico.setText("Italico");
 
-        bttSublinhado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/text_underline.png"))); // NOI18N
+        bttSublinhado.setText("Sublinhado");
         bttSublinhado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bttSublinhadoActionPerformed(evt);
             }
         });
 
-        bttSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/file.png"))); // NOI18N
+        bttSalvar.setText("Salvar");
 
-        bttDesfazer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/arrow_undo.png"))); // NOI18N
+        bttDesfazer.setText("Desfazer");
 
-        bttRefazer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/arrow_redo.png"))); // NOI18N
+        bttRefazer.setText("Refazer");
 
-        menubarArquivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/folder.png"))); // NOI18N
         menubarArquivo.setText("Arquivo");
 
-        arquivobarAbrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/folder.png"))); // NOI18N
         arquivobarAbrir.setText("Abrir");
         arquivobarAbrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +107,6 @@ public class EditorInterface extends javax.swing.JFrame {
         });
         menubarArquivo.add(arquivobarAbrir);
 
-        arquivobarNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/folder_add.png"))); // NOI18N
         arquivobarNovo.setText("Novo");
         arquivobarNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,7 +115,6 @@ public class EditorInterface extends javax.swing.JFrame {
         });
         menubarArquivo.add(arquivobarNovo);
 
-        arquivobarSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/file.png"))); // NOI18N
         arquivobarSalvar.setText("Salvar");
         arquivobarSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,10 +125,8 @@ public class EditorInterface extends javax.swing.JFrame {
 
         menuBar.add(menubarArquivo);
 
-        menubarEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/page_edit.png"))); // NOI18N
         menubarEditar.setText("Editar");
 
-        editarbarDesfazer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/arrow_undo.png"))); // NOI18N
         editarbarDesfazer.setText("Desfazer");
         editarbarDesfazer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,7 +135,6 @@ public class EditorInterface extends javax.swing.JFrame {
         });
         menubarEditar.add(editarbarDesfazer);
 
-        esditarbarRefazer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/arrow_redo.png"))); // NOI18N
         esditarbarRefazer.setText("Refazer");
         esditarbarRefazer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,7 +144,6 @@ public class EditorInterface extends javax.swing.JFrame {
         menubarEditar.add(esditarbarRefazer);
         menubarEditar.add(jSeparator1);
 
-        editarbarRecortar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/cut.png"))); // NOI18N
         editarbarRecortar.setText("Recortar");
         editarbarRecortar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,30 +152,24 @@ public class EditorInterface extends javax.swing.JFrame {
         });
         menubarEditar.add(editarbarRecortar);
 
-        editarbarCopiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/page_white_copy.png"))); // NOI18N
         editarbarCopiar.setText("Copiar");
         menubarEditar.add(editarbarCopiar);
 
-        editarbarColar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/page_paste.png"))); // NOI18N
         editarbarColar.setText("Colar");
         menubarEditar.add(editarbarColar);
 
         menuBar.add(menubarEditar);
 
-        menubarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/user.png"))); // NOI18N
         menubarUsuario.setText("Usuário");
 
-        usuariobarTrocar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/user_edit.png"))); // NOI18N
         usuariobarTrocar.setText("Trocar de Usuário");
         menubarUsuario.add(usuariobarTrocar);
 
-        usuariobarSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/status-offline.png"))); // NOI18N
         usuariobarSair.setText("Sair");
         menubarUsuario.add(usuariobarSair);
 
         menuBar.add(menubarUsuario);
 
-        menubarSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/information.png"))); // NOI18N
         menubarSobre.setText("Sobre");
         menuBar.add(menubarSobre);
 
@@ -198,10 +184,10 @@ public class EditorInterface extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(bttNegrito)
                 .addGap(1, 1, 1)
-                .addComponent(bttItalico, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bttItalico)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bttSublinhado)
-                .addGap(23, 23, 23)
+                .addGap(50, 50, 50)
                 .addComponent(bttSalvar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -209,7 +195,7 @@ public class EditorInterface extends javax.swing.JFrame {
                 .addComponent(bttRefazer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bttDesfazer)
-                .addGap(0, 480, Short.MAX_VALUE))
+                .addGap(0, 278, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
