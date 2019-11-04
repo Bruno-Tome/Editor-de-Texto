@@ -13,7 +13,7 @@ package EditorTexto;
  * @author leos_
  */
 public class Login extends javax.swing.JFrame {
-
+    Usuario Usuario;
     /**
      * Creates new form Login
      */

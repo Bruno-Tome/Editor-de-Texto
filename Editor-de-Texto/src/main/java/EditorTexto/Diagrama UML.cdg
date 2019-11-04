@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.EditorTexto">
+  <ClassDiagramComponents>
+    <Class name="Login" package="EditorTexto" visibility="public" xPosition="511.0" yPosition="334.0">
+      <Fields>
+        <Field name="Usuario" type="Usuario" visibility="package"/>
+        <Field name="loginAdm" type="String" visibility="package"/>
+        <Field name="senhaAdm" type="String" visibility="package"/>
+        <Field name="bttEntrar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="bttFechar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="bttModoTeste" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="txtfIP" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtfLogin" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtfPorta" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtfSenha" type="javax.swing.JPasswordField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="txtfIPActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtfSenhaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="bttModoTesteActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="bttEntrarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="bttFecharActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="EditorInterface" package="EditorTexto" visibility="public" xPosition="877.0" yPosition="947.0">
+      <Fields>
+        <Field name="arquivobarAbrir" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="arquivobarNovo" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="arquivobarSalvar" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="bttDesfazer" type="javax.swing.JButton" visibility="private"/>
+        <Field name="bttItalico" type="javax.swing.JButton" visibility="private"/>
+        <Field name="bttNegrito" type="javax.swing.JButton" visibility="private"/>
+        <Field name="bttRefazer" type="javax.swing.JButton" visibility="private"/>
+        <Field name="bttSalvar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="bttSublinhado" type="javax.swing.JButton" visibility="private"/>
+        <Field name="choice1" type="java.awt.Choice" visibility="private"/>
+        <Field name="editarbarColar" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="editarbarCopiar" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="editarbarDesfazer" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="editarbarRecortar" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="esditarbarRefazer" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jSeparator1" type="javax.swing.JPopupMenu.Separator" visibility="private"/>
+        <Field name="menuBar" type="javax.swing.JMenuBar" visibility="private"/>
+        <Field name="menubarArquivo" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="menubarEditar" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="menubarSobre" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="menubarUsuario" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="txtPainel" type="java.awt.TextArea" visibility="private"/>
+        <Field name="usuariobarSair" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="usuariobarTrocar" type="javax.swing.JMenuItem" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="choice1CaretPositionChanged" returnType="void" visibility="private">
+          <Argument type="java.awt.event.InputMethodEvent" name="evt"/>
+        </Method>
+        <Method name="arquivobarNovoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="arquivobarSalvarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="editarbarRecortarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="arquivobarAbrirActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtPainelTextValueChanged" returnType="void" visibility="private">
+          <Argument type="java.awt.event.TextEvent" name="evt"/>
+        </Method>
+        <Method name="bttSublinhadoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="editarbarDesfazerActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="esditarbarRefazerActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Usuario" package="EditorTexto" visibility="public" xPosition="1019.0" yPosition="58.0">
+      <Fields>
+        <Field name="user" type="String" visibility="private"/>
+        <Field name="senha" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getUser" returnType="String" visibility="public"/>
+        <Method name="setUser" returnType="void" visibility="public">
+          <Argument type="String" name="user"/>
+        </Method>
+        <Method name="getSenha" returnType="String" visibility="public"/>
+        <Method name="setSenha" returnType="void" visibility="public">
+          <Argument type="String" name="senha"/>
+        </Method>
+        <Method name="autentica" returnType="void" visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="senha"/>
+        </Method>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="InterfaceServer" package="EditorTexto" visibility="public" xPosition="1002.0" yPosition="623.0">
+      <Fields>
+        <Field name="label1" type="java.awt.Label" visibility="private"/>
+        <Field name="textField2" type="java.awt.TextField" visibility="private"/>
+        <Field name="txtf" type="java.awt.TextArea" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="atualizaTxtf" returnType="boolean" visibility="public">
+          <Argument type="String" name="str"/>
+        </Method>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;                           void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="main" package="EditorTexto" visibility="public" xPosition="1019.0" yPosition="341.0">
+      <Fields>
+        <Field name="ini" type="Login" visibility="package"/>
+        <Field name="inter" type="InterfaceServer" visibility="package"/>
+        <Field name="server" type="EditorServer" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="EditorServer" package="EditorTexto" visibility="public" xPosition="1426.0" yPosition="341.0">
+      <Fields>
+        <Field name="inter" type="InterfaceServer" visibility="private"/>
+        <Field name="outputFromServer" type="OutputStream" visibility="package"/>
+        <Field name="inputToServer" type="InputStream" visibility="package"/>
+        <Field name="connectionSocket" type="Socket" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="InterfaceServer" name="moth"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="init" returnType="void" visibility="public"/>
+        <Method name="connectToServer" returnType="Socket" visibility="public" isStatic="true"/>
+        <Method name="IOStream" returnType="void" visibility="public"/>
+        <Method name="salvar" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="ini" source="EditorTexto.main" target="EditorTexto.Login" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Usuario" source="EditorTexto.Login" target="EditorTexto.Usuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="inter" source="EditorTexto.main" target="EditorTexto.InterfaceServer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="inter" source="EditorTexto.EditorServer" target="EditorTexto.InterfaceServer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="server" source="EditorTexto.main" target="EditorTexto.EditorServer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

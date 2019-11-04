@@ -12,14 +12,16 @@ import java.util.*;
  * @version 1.0000001
  */
 public class main {
-
-    public static void main(String [] args){
+    Login ini ;
+    InterfaceServer inter ;
+    EditorServer server ;
+    public void main(String [] args){
         
-            Login ini = new Login();
+            this.ini = new Login();
             ini.setVisible(true);
-            InterfaceServer inter =  new InterfaceServer();
+            this.inter =  new InterfaceServer();
             inter.setVisible(true);
-            EditorServer server = new EditorServer(inter);
+            this.server = new EditorServer(inter);
             server.init();
         
             /**
