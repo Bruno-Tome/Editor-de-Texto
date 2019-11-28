@@ -6,6 +6,7 @@
 package EditorTexto;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,11 +18,39 @@ public class Usuario {
     
     //public String loginAdm = "adm";
     //public String senhaAdm = "123";
+    ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
     
+    
+    
+    public Usuario(String user, String senha){
+        this.setSenha(senha);
+        this.setUser(user);
+    }
+    
+    public Usuario(){
+        
+    }
 
     /**
      * @return the user
      */
+    public void creatUser(String user2, String senha2){
+        usuarios.add(new Usuario(user2, senha2));
+    }
+    
+    public boolean autentica(String entradaUser, String entradaSenha){
+        for(Usuario usuario : usuarios){
+            if(entradaUser != usuario.user){
+                return false;
+            }else if(entradaSenha != usuario.senha){
+                return false;
+            }else{
+            return true;
+        }
+    }
+        
+    }
+    
     public String getUser() {
         return user;
     }
@@ -47,9 +76,7 @@ public class Usuario {
         this.senha = senha;
     }
     
-    public void autentica(String user, String senha){
-        
-    }
+    
     
     @Override
     public boolean equals(Object obj){ 
