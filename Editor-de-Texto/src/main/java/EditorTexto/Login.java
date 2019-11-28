@@ -213,8 +213,8 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Login e ou senha incorretos");
         }else{
           
-             EditorInterface editor = new EditorInterface();
-             editor.setVisible(true);
+             Menu menu = new Menu();
+             menu.setVisible(true);
              
         }
         
