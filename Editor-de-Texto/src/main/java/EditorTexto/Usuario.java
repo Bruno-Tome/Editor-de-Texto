@@ -18,21 +18,32 @@ public class Usuario {
     
     //public String loginAdm = "adm";
     //public String senhaAdm = "123";
+    
+    /**
+     * ArrayList para guardar os cadastros de usuarios
+     */
     ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
     
     
-    
+    /**
+     * Definicao dos dois construtores que precisamos, um que recebe parametros para inicializacao, e outro que so cria um objeto
+     * @param user
+     * @param senha 
+     */
     public Usuario(String user, String senha){
         this.setSenha(senha);
         this.setUser(user);
     }
-    
     public Usuario(){
         
     }
 
+    
+    
     /**
-     * @return the user
+     * Metodo para criar um novo usuario, um novo objeto do tipo usuario, que eh guardado na ArryList
+     * @param user2
+     * @param senha2 
      */
     public void creatUser(String user2, String senha2){
         usuarios.add(new Usuario(user2, senha2));
@@ -51,6 +62,10 @@ public class Usuario {
         
     }
     
+    
+    /**
+     * @return the user
+     */
     public String getUser() {
         return user;
     }
@@ -77,7 +92,11 @@ public class Usuario {
     }
     
     
-    
+    /**
+     * Override do metodo equals, definindo as igualdades necessarias
+     * @param obj 
+     * @return 
+     */
     @Override
     public boolean equals(Object obj){ 
         

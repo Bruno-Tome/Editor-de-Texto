@@ -137,13 +137,19 @@ public class NovoUser extends javax.swing.JFrame {
     private void txtfUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfUserActionPerformed
-
+/**
+ * Metodo do botao de cancelar, leva de volta a tela de login
+ * @param evt 
+ */
     private void bttCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttCancelarActionPerformed
         // TODO add your handling code here:
         Login ini = new Login();
         ini.setVisible(true);
     }//GEN-LAST:event_bttCancelarActionPerformed
-
+/**
+ * Metodo do botao de OK, compara as senhas dos campos, se forem iguais cria um novo usuario, caso contrario da uma mensagem de erro
+ * @param evt 
+ */
     private void bttOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttOkActionPerformed
         // TODO add your handling code here:
         if(txtpSenha == txtpSenhaConfirma){

@@ -193,7 +193,10 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtfSenhaActionPerformed
     
     
-    
+    /**
+     * Metodo que inicia o editor em modo de teste, para o botao de modo de teste
+     * @param evt 
+     */
     private void bttModoTesteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttModoTesteActionPerformed
         // TODO add your handling code here:
         
@@ -206,7 +209,10 @@ public class Login extends javax.swing.JFrame {
          */
         
     }//GEN-LAST:event_bttModoTesteActionPerformed
-
+/**
+ * Metodo do botao de Entrar, ele autentica o login do usuario, caso o login esteja correto, abre a janela de menu
+ * @param evt 
+ */
     private void bttEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttEntrarActionPerformed
         // TODO add your handling code here:
         if(!back.autentica(txtfLogin.getText(), txtfSenha.getText())){
@@ -223,7 +229,10 @@ public class Login extends javax.swing.JFrame {
          */
         
     }//GEN-LAST:event_bttEntrarActionPerformed
-
+/**
+ * Botao para fechar o programa
+ * @param evt 
+ */
     private void bttFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttFecharActionPerformed
         // TODO add your handling code here:
         System.exit(0);
@@ -232,7 +241,10 @@ public class Login extends javax.swing.JFrame {
          */
         
     }//GEN-LAST:event_bttFecharActionPerformed
-
+/**
+ * Metodo do botao de criar novo usuario, ele leva para uma nova tela para preencher os dados do novo usuario
+ * @param evt 
+ */
     private void bttNovoUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttNovoUserActionPerformed
         // TODO add your handling code here:
         NovoUser cadastra = new NovoUser();
